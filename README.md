@@ -1,8 +1,25 @@
 # TestBookingSystem
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/test_booking_system`. To experiment with that code, run `bin/console` for an interactive prompt.
+## Requirements
 
-TODO: Delete this and the text above, and describe your gem
+### Tech requirements
+
+- Язык руби
+- Реляционная база данных(mysql, postgres, sqlite)
+- Реализация включает в себя только модели, миграции
+
+### Task
+
+Реализовать структуру приложения для сети ресторанов.
+в системе есть пользователи
+в системе есть рестораны(уникальное имя)
+у каждого ресторана есть столы
+у каждого стола есть резервации
+каждая резервация принадлежит пользователю
+пользователь не может зарезервировать столы в разных ресторанах на одно время, но может зарезервировать разные столы в одном ресторане на одно время
+один стол  нельзя зарезервировать двум разным людям на один промежуток времени, но если одна резервация заканчивается в 5 вечера, то следующая может начинаться в 5 вечера
+длительность резервации кратна 30 минутам
+у каждого ресторана есть график работы
 
 ## Installation
 
@@ -22,7 +39,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+First of all you need to rolling up a migrations for test environment:
+
+    $ rake db:create
+    $ rake db:migrate RAILS_ENV=test
+
+Now, you can launch a specs to see is code works correctly:
+
+    $ rake spec
 
 ## Development
 
