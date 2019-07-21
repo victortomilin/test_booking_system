@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
+require 'simplecov'
+SimpleCov.start
+
 require 'bundler/setup'
+require 'database_cleaner'
+require 'pry'
+require 'pry-nav'
 require 'test_booking_system'
 
 RSpec.configure do |config|
@@ -13,4 +19,20 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
 end
+
+ActiveRecord::Base.establish_connection(
+  adapter: 'postgresql',
+  database: 'booking_test'
+)
