@@ -23,7 +23,7 @@
 
 ## Entity Relationship Diagram
 
-![Entity Relationship Diagram](https://cdn1.imggmi.com/uploads/2019/7/21/85c7f774c554b285b0ebbeb8a247546c-full.png)
+![Entity Relationship Diagram](https://user-images.githubusercontent.com/1308139/61596710-8f89fb80-abf6-11e9-80ec-06fce1bdff76.png)
 
 ## How to check
 
