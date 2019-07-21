@@ -1,5 +1,21 @@
 # frozen_string_literal: true
 
+# TODO: Well, I have described a main use cases according requirements but
+#       I think use cases could be much more. I think the test file is too large
+#       and would be great to reduce amount of lines through splitting tests by
+#       suitable contexts and extract to separated files.
+#
+# TODO: I have covered only interaptor in functional test style,
+#       but I would prefer to do unit test per each part of app such as models,
+#       validators, helpers etc.
+#
+# TODO: Might be better to use a fabricator to reproduce an entities in DB.
+#
+# TODO: Get to start using mocking and stubbing instead of reproducing
+#       a use cases directly through the real entities.
+#
+# TODO: Too many magic numbers
+
 RSpec.describe TestBookingSystem::Interactors::BookTable do
   it 'should book a table for the user at the restaurant' do
     date = 10.days.from_now.beginning_of_day + 11.hours

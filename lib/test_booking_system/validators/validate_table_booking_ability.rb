@@ -2,6 +2,10 @@
 
 module TestBookingSystem
   module Validators
+    # TODO: I guess this validator looks pretty good, but still has a lot
+    #       of not covered use cases. I would like to get much more use
+    #       cases to cover them of course.
+
     class ValidateTableBookingAbility
       include ActiveModel::Validations
 
