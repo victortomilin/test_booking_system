@@ -18,7 +18,6 @@ require 'test_booking_system/interactors/book_table'
 require 'test_booking_system/validators/validate_table_booking_ability'
 require 'test_booking_system/validators/validate_restaurant_ability'
 
-
 module TestBookingSystem
   class Error < StandardError; end
   # Your code goes here...
