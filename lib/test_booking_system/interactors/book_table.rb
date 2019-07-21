@@ -26,7 +26,17 @@ module TestBookingSystem
       end
 
       def reservation_valid?
-        true
+        restaurant_available? && table_available?
+      end
+
+      def restaurant_available?
+        validator ||= Validators::ValidateRestaurantAbility.new reservation
+        validator.valid?
+      end
+
+      def table_available?
+        validator ||= Validators::ValidateTableBookingAbility.new reservation
+        validator.valid?
       end
 
       def end_date_of_reservation
